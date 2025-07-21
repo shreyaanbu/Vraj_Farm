@@ -7,9 +7,14 @@
     
 }
 
+
 a.active p{
     font-weight: 700;
     color: var(--green);
+}
+
+a:hover p{
+  font-weight: 700;
 }
 
 
@@ -22,8 +27,13 @@ a.active p{
   --transition: all 400ms ease;
   --light-yellow:  rgb(232, 207, 45);
 }
+
 body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
   background-color: black;
+  overflow-x: hidden;
 }
 
 @media (max-width:640px){

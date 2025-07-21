@@ -11,7 +11,7 @@ const Navbar = () => {
             <img src = {assets.logo} className = "w-24 sm:w-32" alt = "logo" />
         </NavLink>
       
-      <ul className = "hidden sm:flex gap-10 text-md text-gray-700">
+      <ul className = "hidden sm:flex gap-10 text-lg text-gray-700">
         <NavLink to = '/about' className = "flex flex-col items-center gap-1">
             <p>About Us</p>
         </NavLink>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 </div>
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/'>Home</NavLink>
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/about'>About Us</NavLink>
-                <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/order'>Order</NavLink>
+                <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/collection'>Order</NavLink>
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/contact'>Contact Us</NavLink>
             </div>
         </div>
