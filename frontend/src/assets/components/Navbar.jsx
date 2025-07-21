@@ -21,7 +21,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink to = '/contact' className = "flex flex-col items-center gap-1">
-            <p>Contact Us</p>
+            <p>FAQs</p>
         </NavLink>
         </ul>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/'>Home</NavLink>
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/about'>About Us</NavLink>
                 <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/collection'>Order</NavLink>
-                <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/contact'>Contact Us</NavLink>
+                <NavLink onClick = {() => setVisible(false)} className = 'py-2 px-6' to='/contact'>FAQs</NavLink>
             </div>
         </div>
     </div>
