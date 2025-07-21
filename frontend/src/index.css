@@ -13,7 +13,7 @@ a.active p{
     color: var(--green);
 }
 
-a:hover p{
+a:hover{
   font-weight: 700;
 }
 
