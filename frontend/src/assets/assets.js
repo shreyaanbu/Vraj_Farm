@@ -28,11 +28,21 @@ export const assets = {
 
 export const products = [
     {
-        _id: 1,
-        name: "Kesar",
+        _id: "aaaaa",
+        name: "Kesar Type 1",
         description: "The regular variety.",
         price: 100,
-        image: [],
-        date: 1111111
+        image: [mango4_cropped],
+        sizes: [3, 5, 7],
+        date: 1716634345448
+    },
+    {
+        _id: "aaaab",
+        name: "Kesar Type 2",
+        description: "Not the regular variety?",
+        price: 100,
+        image: [mango4_cropped],
+        sizes: [3, 5],
+        date: 1716634345448
     }
 ]

@@ -4,7 +4,7 @@ import ContactFooter from '../assets/components/ContactFooter'
 const Contact = () => {
   return (
     <div>
-      <div className="items-center sm:px-20 pt-20 pb-10 border-b border-gray-300">
+      <div className="items-center sm:px-20 pt-5 pb-10 border-b border-gray-300">
         <h1 className="text-center text-[2rem] sm:text-[3rem] md:text-[4rem] font-bold bg-gradient-to-b from-[var(--green)] to-[var(--brown)] bg-clip-text text-transparent px-5">
           FAQs
         </h1>

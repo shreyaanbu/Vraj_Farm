@@ -10,8 +10,7 @@ const Hero = () => {
         <p className = 'text-white p-10 pb-20 sm:text-[1rem] md:text-[1.5rem]'>
           Naturally sweet, and bursting with flavor—our organic Kesar mangoes are a golden delight in bite! 🥭✨
         </p>
-        <Link to='./collection'>
-          <a className = 'p-4 text-[1.5rem] bg-[var(--black)] text-white rounded-md font-bold hover:bg-[var(--yellow)] hover:text-[var(--brown)] transition-[var(--transition)]'>Order Now</a> 
+        <Link to='./collection' className = 'p-4 text-[1.5rem] bg-[var(--black)] text-white rounded-md font-bold hover:bg-[var(--yellow)] hover:text-[var(--brown)] transition-[var(--transition)]'>Order Now
         </Link>
       </div>
       
