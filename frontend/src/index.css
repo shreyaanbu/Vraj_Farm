@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+*{
+    font-family: Montserrat;
+    
+}
+
+a.active p{
+    font-weight: 700;
+    color: var(--green);
+}
+
+
+:root {
+  --yellow: #f1be0c;
+  --white: #ffffff;
+  --green: #066a39;
+  --black: #0E1428;
+  --brown: rgb(62, 56, 56);
+  --transition: all 400ms ease;
+  --light-yellow:  rgb(232, 207, 45);
+}
+body{
+  background-color: black;
+}
+
+@media (max-width:640px){
+  a.active{
+    color: var(--green);
+    font-weight: 700;
+  }
+}
