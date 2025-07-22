@@ -52,13 +52,16 @@ const Cart = () => {
           }
         </div>
       </div>
-      
-      <CartTotal />
+      <div className='px-10 sm:px-30 lg:px-60 py-4 pb-20'>
+        <CartTotal />
+      </div>
       <div className='text-center pb-20  border-b border-gray-300'>
         <button onClick={()=>navigate('/place-order')} className='p-4 text-[1rem] sm:text-[1.25rem] bg-[var(--black)] text-white rounded-md font-bold hover:bg-[var(--yellow)] hover:text-[var(--brown)] transition-[var(--transition)]'>Proceed to Checkout</button>
       </div>
 
-      <ContactFooter/>
+      <div className='bg-[var(--light-yellow)]'>
+        <ContactFooter />
+      </div>
     </div>
   )
 }

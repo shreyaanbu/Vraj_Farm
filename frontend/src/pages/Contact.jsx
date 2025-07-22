@@ -32,7 +32,9 @@ const Contact = () => {
         </p>
       </div>
 
-      <ContactFooter />
+      <div className='bg-[var(--light-yellow)]'>
+        <ContactFooter />
+      </div>
     </div>
   )
 }

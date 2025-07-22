@@ -4,8 +4,8 @@ import { ShopContext } from '../../context/ShopContext'
 const CartTotal = () => {
     const {currency, delivery_fee, getCartAmount} = useContext(ShopContext);
   return (
-    <div className='w-full py-4 px-10 sm:px-30 lg:px-60 pb-20'>
-      <h2 className = ' text-[1.5rem] sm:text-[2rem] text-[var(--black)] font-bold pb-10'>Cart Total:</h2>
+    <div className='w-full'>
+      <h2 className = ' text-[1.25rem] sm:text-[1.5rem] text-[var(--black)] font-bold pb-5'>Cart Total:</h2>
       <div className = 'flex flex-col gap-2 mt-2 text-sm'>
         <div className = 'flex justify-between'>
             <p>Sub-total</p>

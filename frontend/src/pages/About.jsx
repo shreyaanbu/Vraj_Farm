@@ -5,17 +5,17 @@ import {assets} from '@/assets/assets.js';
 const About = () => {
   return (
     <div>
-      <div className = 'items-center bg-[var(--green)] sm:px-20 py-20 text-center'>
-        <h1 className = 'text-[3rem] md:text-[4rem] font-bold bg-gradient-to-b from-[var(--light-yellow)] to-[var(--yellow)] bg-clip-text text-transparent px-5'>About Us</h1>
-        <p className = 'text-white p-10 sm:text-[1rem] md:text-[1.5rem] italic text-justify'>
+      <div className = 'items-center bg-[var(--light-yellow)] sm:px-20 py-20 text-center'>
+        <h1 className = 'text-[3rem] md:text-[4rem] font-bold bg-gradient-to-b bg-gradient-to-b from-[var(--green)] to-[var(--brown)] bg-clip-text text-transparent px-5'>About Us</h1>
+        <p className = 'text-[var(--black)] p-10 sm:text-[1rem] md:text-[1.5rem] italic text-justify'>
           We started in the year _year_, in _location_. Our main motivation was to produce the best quality of Kesar mangoes, keeping in mind the health of the consumer as well as that of the environment. Organic farming has paved the way for that, and so far every year, we produce _quantity_ of mangoes. There are _number of_ healthy mango trees, solely nurtured through the ways of organic farming, whose nutritious bounty we reap annually. 
         </p>
-        <p className = 'text-white px-10 sm:text-[1rem] md:text-[1.5rem] italic'>
+        <p className = 'text-[var(--black)] px-10 sm:text-[1rem] md:text-[1.5rem] italic'>
           Here are some photographs from our nurtured farm:
         </p>
       </div>
 
-      <div className = 'items-center bg-[var(--green)] sm:px-10 pb-20 text-center'>
+      <div className = 'items-center bg-[var(--light-yellow)] sm:px-10 pb-20 text-center'>
         <div className= 'flex flex-row flex-wrap gap-8 items-center justify-center'>
           <img src={assets.mango2} className='rounded-sm max-h-[30vw]' alt="mango-tree" />
           <img src={assets.mango3} className='rounded-sm max-w-[30vw]' alt="farm" />

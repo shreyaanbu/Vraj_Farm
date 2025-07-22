@@ -12,6 +12,7 @@ import menu from './menu.png'
 import close from './close.png'
 import ding from './ding.mp3'
 import bin from './bin.png'
+import razorpay from './razorpay.jpg'
 
 export const assets = {
     logo_transparent_bg,
@@ -27,7 +28,8 @@ export const assets = {
     menu,
     close,
     ding,
-    bin
+    bin,
+    razorpay
 }
 
 export const products = [
