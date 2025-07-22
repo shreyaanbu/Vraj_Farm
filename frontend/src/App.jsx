@@ -9,10 +9,12 @@ import Cart from './pages/Cart'
 import Navbar from './assets/components/Navbar'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
     <div >
+      <ToastContainer />
       <Navbar />
 
         <Routes>

@@ -10,6 +10,8 @@ import cart from "./shopping-cart_icon.png"
 import user_icon from "./user_icon.png"
 import menu from './menu.png'
 import close from './close.png'
+import ding from './ding.mp3'
+import bin from './bin.png'
 
 export const assets = {
     logo_transparent_bg,
@@ -23,7 +25,9 @@ export const assets = {
     cart,
     user_icon,
     menu,
-    close
+    close,
+    ding,
+    bin
 }
 
 export const products = [

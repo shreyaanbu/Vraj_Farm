@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react'
 import { ShopContext } from '../../context/ShopContext'
 
 const ProductItem = ({id, image, name, price, description, sizes}) => {
-    const {currency} = useContext(ShopContext);
+    const {currency, addToCart} = useContext(ShopContext);
     const [size, setSize] = useState('');
   return (
     <div>
-      <div className = 'overflow-hidden max-w-[20vw]'>
+      <div className = 'overflow-hidden max-w-[20vw] min-w-[200px]'>
         <img className = 'hover:scale-110 transition ease-in-out'src = {image[0]} alt = "product_image" />
       </div>
-      <div className='px-5 py-2'>
+      <div className='py-2'>
         <p className='text-lg font-bold'>{name}</p>
         <p className='text-md font-bold text-[var(--green)]'>{currency}{price}/kg</p>
         <p>{description}</p>
@@ -27,7 +27,7 @@ const ProductItem = ({id, image, name, price, description, sizes}) => {
             ))
             }
         </div>
-        <button className = 'bg-[var(--green)] text-white text-md px-4 py-2 mt-4 active:bg-[var(--yellow)] active:text-[var(--brown)]'>Add to Cart</button>
+        <button onClick={()=>addToCart(id, size)} className = 'bg-[var(--green)] text-white text-md px-4 py-2 mt-4 mb-12 active:bg-[var(--yellow)] active:text-[var(--brown)]'>Add to Cart</button>
       </div>      
     </div>
   )
