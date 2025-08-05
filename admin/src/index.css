@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+
+* {
+    font-family: Montserrat;
+}
+
+:root {
+  --yellow: #f1be0c;
+  --white: #ffffff;
+  --green: #066a39;
+  --black: #0E1428;
+  --brown: rgb(62, 56, 56);
+  --transition: all 400ms ease;
+  --light-yellow:  rgb(255, 241, 163);
+  --light-green: rgb(199, 234, 209);
+}
+
+.active{
+    background-color: var(--light-yellow);
+    border-color: var(--yellow);
+}
+
+select, input, textarea {
+  border: 1px solid gray-300;
+  outline-color: #f1be0c;
+  border-radius: 4px;
+}

@@ -13,6 +13,7 @@ import close from './close.png'
 import ding from './ding.mp3'
 import bin from './bin.png'
 import razorpay from './razorpay.jpg'
+import stripe from './stripe.png'
 
 export const assets = {
     logo_transparent_bg,
@@ -29,7 +30,8 @@ export const assets = {
     close,
     ding,
     bin,
-    razorpay
+    razorpay,
+    stripe
 }
 
 export const products = [
