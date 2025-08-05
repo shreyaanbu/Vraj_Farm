@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactFooter = () => {
   return (
-    <div className='px-20 pb-12 pt-10 flex flex-wrap gap-30 text-lg text-[var(--green)]'>
+    <div className='px-8 md:px-20 pb-12 pt-10 flex flex-wrap gap-30 text-lg text-[var(--green)]'>
       <div>
         <h2 className = 'font-bold text-xl'>Contact Us:</h2>
         <p>Address: </p>
