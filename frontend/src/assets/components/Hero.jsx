@@ -36,28 +36,28 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-16 mt-10 rounded-sm">
           <img src={assets.mango1} alt="mangoes" className="rounded-sm w-full max-w-[65vw] lg:max-w-[30vw]" />
 
-          <ul className="flex flex-col items-stretch gap-8 text-left font-bold text-[1.5rem] lg:text-[1.5rem] p-6 sm:p-8 md:p-0">
+          <ul className="flex flex-col items-stretch gap-8 text-justify font-bold text-[1.5rem] lg:text-[1.5rem] p-8 sm:p-12">
             <div >
               <p>Good Health</p>
-              <p className='font-normal text-[0.75rem] sm:text-[1.25rem]'>
+              <p className='font-normal text-[1rem] sm:text-[1.25rem]'>
                 Our mangoes are grown without harmful chemicals, ensuring that every bite is rich in natural goodness. Packed with essential vitamins, antioxidants, and fiber, they support your immune system and overall well-being.
               </p>
             </div>
             <div>
               <p>Happy Soil</p>
-              <p className='font-normal text-[0.75rem] sm:text-[1.25rem]'>
+              <p className='font-normal text-[1rem] sm:text-[1.25rem]'>
                 We nurture our soil through sustainable farming practices that promote biodiversity and natural fertility. Healthy soil is the foundation of nutrient-rich fruits and a resilient farm ecosystem.
               </p>
             </div>
             <div>
               <p>Nutrition-Packed Fruits</p>
-              <p className='font-normal text-[0.75rem] sm:text-[1.25rem]'>
+              <p className='font-normal text-[1rem] sm:text-[1.25rem]'>
                 Each mango is a powerhouse of nutrients—rich in Vitamin C, A, and potassium. Grown with care, our fruits deliver not just taste but genuine health benefits in every juicy slice.
               </p>
             </div>
             <div>
               <p>Health of Our Mango Trees</p>
-              <p className='font-normal text-[0.75rem] sm:text-[1.25rem]'>
+              <p className='font-normal text-[1.0rem] sm:text-[1.25rem]'>
                 We prioritize the long-term health of our mango trees by using organic compost, natural pest control, and mindful pruning. A healthy tree bears better fruit and contributes to a thriving, eco-friendly orchard.
               </p>
             </div>
