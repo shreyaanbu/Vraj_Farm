@@ -76,6 +76,10 @@ const Orders = ({ token }) => {
       filter: 'agNumberColumnFilter'
     },
     {
+      headerName: "Phone",
+      field: "address.phone"
+    },
+    {
       headerName: "Date",
       valueGetter: params =>
         new Date(params.data.date).toLocaleDateString(),
