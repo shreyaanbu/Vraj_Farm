@@ -47,7 +47,7 @@ const registerUser = async (req, res) => {
             return res.json({success:false, message: "Please enter a valid email address."});
         }
         if(password.length < 8){
-            return res.json({success:false, message: "Please enter a strong password."});
+            return res.json({success:false, message: "Password must be at least 8 characters long."});
         }
         
         //hashing user password
@@ -90,4 +90,9 @@ const adminLogin = async (req, res) => {
     }
 }
 
-export {loginUser, registerUser, adminLogin}
+const getProfile = async (req, res) => {
+  const user = await userModel.findById(req.user._id).select('-password');
+  res.json({ success: true, user });
+}
+
+export {loginUser, registerUser, adminLogin, getProfile}

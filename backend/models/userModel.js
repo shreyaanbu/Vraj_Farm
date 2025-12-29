@@ -5,6 +5,17 @@ const userSchema = new mongoose.Schema({
     email: { type: String, reuired: true, unique: true },
     password: { type: String, required: true },
     cartData: { type: Object, default: {} },
+    phone: { type: String },
+
+    address: {
+        firstName: String,
+        lastName: String,
+        street: String,
+        city: String,
+        state: String,
+        country: String,
+        pincode: String,
+    },
 }, { minimize: false })
 
 const userModel = mongoose.models.user || mongoose.model('user', userSchema);
