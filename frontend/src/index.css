@@ -4,9 +4,8 @@
 
 *{
     font-family: Montserrat;
-    
+    --swiper-theme-color: white;
 }
-
 
 a.active p{
     font-weight: 700;

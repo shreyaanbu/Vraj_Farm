@@ -1,5 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { ShopContext } from '../../context/ShopContext'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const ProductItem = ({ id, image, name, price, description, sizes }) => {
   const { currency, addToCart } = useContext(ShopContext);
@@ -8,9 +12,26 @@ const ProductItem = ({ id, image, name, price, description, sizes }) => {
 
   return (
     <div className='overflow-hidden max-w-[20vw] min-w-[200px]'>
-      <div className='overflow-hidden' >
-        <img className='hover:scale-110 transition ease-in-out' src={image[0]} alt="product_image" />
+      <div>
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop
+          className="w-full h-full"
+        >
+          {image.map((img, index) => (
+            <SwiperSlide key={index} className="flex items-center justify-center">
+              <img
+                src={img}
+                alt={`product-${index}`}
+                className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
+
       <div className='py-2'>
         <p className='text-lg font-bold'>{name}</p>
         <p className='text-md font-bold text-[var(--green)]'>{currency}{price}/kg</p>
@@ -51,8 +72,8 @@ const ProductItem = ({ id, image, name, price, description, sizes }) => {
           onClick={() => addToCart(id, size, quantity)}
           disabled={!size} // disable if no size selected
           className={`text-md px-4 py-2 mt-4 mb-12 cursor-pointer ${size
-              ? 'bg-[var(--green)] text-white active:bg-[var(--yellow)] active:text-[var(--brown)]'
-              : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+            ? 'bg-[var(--green)] text-white active:bg-[var(--yellow)] active:text-[var(--brown)]'
+            : 'bg-gray-400 text-gray-200 cursor-not-allowed'
             }`}
         >
           Add to Cart
