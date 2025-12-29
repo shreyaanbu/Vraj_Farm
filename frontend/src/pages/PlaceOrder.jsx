@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const PlaceOrder = () => {
-  const [method, setMethod] = useState('cod');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -51,21 +50,15 @@ const PlaceOrder = () => {
         amount: getCartAmount() + delivery_fee
       }
 
-      switch (method) {
-        case 'cod':
-          const response = await axios.post(backendUrl + "/api/order/place", orderData, { headers: { token: token } });
-          if (response.data.success) {
-            setCartItems({});
-            navigate('/orders');
-          }
-          else {
-            toast.error(response.data.message);
-          }
-          break;
-
-        default:
-          break;
+      const response = await axios.post(backendUrl + "/api/order/place", orderData, { headers: { token: token } });
+      if (response.data.success) {
+        setCartItems({});
+        navigate('/orders');
       }
+      else {
+        toast.error(response.data.message);
+      }
+
 
     } catch (error) {
       console.log(error);

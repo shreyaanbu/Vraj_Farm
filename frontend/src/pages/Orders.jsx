@@ -18,8 +18,6 @@ const Orders = () => {
         response.data.orders.map((order) => {
           order.items.map((item) => {
             item['status'] = order.status
-            item['payment'] = order.payment
-            item['paymentMethod'] = order.paymentMethod
             item['date'] = order.date
             allOrdersItem.push(item)
           })
@@ -63,7 +61,7 @@ const Orders = () => {
                     <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
                     <p className='text-sm text-base'>{item.status}</p>
                   </div>
-                  <button onClick = {loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm'>Track Order</button>
+                  <button onClick = {loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm'>Refresh</button>
                 </div>
               </div>
             ))

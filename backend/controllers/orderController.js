@@ -1,7 +1,6 @@
 import orderModel from "../models/orderModel.js"
 import userModel from "../models/userModel.js"
 
-//placing order using COD method
 const placeOrder = async (req, res) => {
     try {
         const { items, amount, address } = req.body
@@ -12,8 +11,6 @@ const placeOrder = async (req, res) => {
             items,
             address,
             amount,
-            paymentMethod: 'COD',
-            payment: false,
             date: Date.now()
         }
 
@@ -29,11 +26,6 @@ const placeOrder = async (req, res) => {
         console.log(error)
         res.json({success:false, message:error.message})
     }
-}
-
-//placing order using Razorpay method
-const placeOrderRazorpay = async (req, res) => {
-
 }
 
 //all orders data for Admin Panel
@@ -75,4 +67,4 @@ const updateStatus = async (req, res) => {
     }
 }
 
-export { placeOrder, placeOrderRazorpay, allOrders, userOrders, updateStatus }
+export { placeOrder, allOrders, userOrders, updateStatus }
