@@ -19,6 +19,8 @@ const PlaceOrder = () => {
   })
   const { navigate, backendUrl, token, delivery_fee, cartItems, setCartItems, getCartAmount, products } = useContext(ShopContext);
 
+  const isFormComplete = Object.values(formData).every(value => value && value.toString().trim() !== '');
+
   const onChangeHandler = (event) => {
     const name = event.target.name
     const value = event.target.value
@@ -101,13 +103,18 @@ const PlaceOrder = () => {
             DISCLAIMER
           </h1>
           <p className='mt-4'> Once you place your order, we will receive your order details and you will be contacted by us for further steps. This will be done using the contact information you provide us on this page. </p>
-        </div>
-        <div className='w-full text-end mt-8'>
-          <button type='submit' className='bg-black text-white px-12 py-3'>Place Order</button>
+          <div className='w-full text-end mt-8'>
+            <button
+              type='submit'
+              disabled={!isFormComplete}
+              className={`px-12 py-3 ${isFormComplete ? 'bg-black text-white' : 'bg-gray-400 text-gray-200 cursor-not-allowed'}`}
+            >
+              Place Order
+            </button>
+          </div>
         </div>
       </div>
-
-    </form>
+    </form >
   )
 }
 

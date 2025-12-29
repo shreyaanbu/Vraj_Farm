@@ -47,7 +47,16 @@ const ProductItem = ({ id, image, name, price, description, sizes }) => {
             </>
           )}
         </div>
-        <button onClick={() => addToCart(id, size, quantity)} className='bg-[var(--green)] text-white text-md px-4 py-2 mt-4 mb-12 active:bg-[var(--yellow)] active:text-[var(--brown)] cursor-pointer'>Add to Cart</button>
+        <button
+          onClick={() => addToCart(id, size, quantity)}
+          disabled={!size} // disable if no size selected
+          className={`text-md px-4 py-2 mt-4 mb-12 cursor-pointer ${size
+              ? 'bg-[var(--green)] text-white active:bg-[var(--yellow)] active:text-[var(--brown)]'
+              : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+            }`}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   )
