@@ -16,42 +16,40 @@ const ShopContextProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
 
 
-  const addToCart = async (itemId, size, quantity = 1) => {
+  const addToCart = async (itemId, size) => {
     if (!size) {
       toast.error('Please Select Product Size.');
       return;
     }
-
     const audio = new Audio(assets.ding);
     let cartData = structuredClone(cartItems);
-
-    if (!cartData[itemId]) {
+    if (cartData[itemId]) {
+      if (cartData[itemId][size]) {
+        cartData[itemId][size] += 1;
+        audio.play();
+      }
+      else {
+        cartData[itemId][size] = 1;
+        audio.play();
+      }
+    }
+    else {
       cartData[itemId] = {};
+      cartData[itemId][size] = 1;
+      audio.play();
     }
-
-    if (!cartData[itemId][size]) {
-      cartData[itemId][size] = 0;
-    }
-
-    cartData[itemId][size] += quantity;
-    audio.play();
-
     setCartItems(cartData);
 
     if (token) {
       try {
-        await axios.post(
-          backendUrl + '/api/cart/add',
-          { itemId, size, quantity },
-          { headers: { token } }
-        );
+        await axios.post(backendUrl + '/api/cart/add', { itemId, size }, { headers: { token } })
+
       } catch (error) {
-        console.log(error);
-        toast.error(error.message);
+        console.log(error)
+        toast.error(error.message)
       }
     }
-  };
-
+  }
 
   const getCartCount = () => {
     let totalCount = 0;
@@ -133,7 +131,7 @@ const ShopContextProvider = (props) => {
   }
 
   useEffect(() => {
-    if (!token && localStorage.getItem('token')) {
+    if(!token && localStorage.getItem('token')){
       setToken(localStorage.getItem('token'))
       getUserCart(localStorage.getItem('token'))
     }

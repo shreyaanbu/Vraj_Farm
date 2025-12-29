@@ -3,17 +3,16 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '@/assets/assets'
 import CartTotal from '../assets/components/CartTotal'
 import ContactFooter from '../assets/components/ContactFooter'
-import { toast } from 'react-toastify'
 
 const Cart = () => {
 
 
-  const { products, currency, cartItems, updateQuantity, navigate, token } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
     const tempData = [];
     if (products.length > 0) {
-
+      
       for (const items in cartItems) {
         for (const item in cartItems[items]) {
           if (cartItems[items][item] > 0) {
@@ -28,21 +27,6 @@ const Cart = () => {
     }
     setCartData(tempData);
   }, [cartItems, products])
-
-  const handleCheckout = () => {
-    if (cartData.length === 0){
-      toast.info('Please add some items to the cart to place an order.');
-      navigate('/collection');
-      return;
-    }
-    if (!token) {
-      toast.info('Please login to place an order');
-      navigate('/login');
-      return;
-    }
-    navigate('/place-order');
-  };
-
   return (
     <div>
       <div className="items-center sm:px-20 pt-5 pb-10">
@@ -60,10 +44,9 @@ const Cart = () => {
                     <div>
                       <p className='text-sm sm:text-lg font-bold'>{productData.name}</p>
                       <div className='flex items-center gap-3 mt-2'>
-                        <p className='text-md font-bold text-[var(--green)]'>{currency}{Number(item.size) * Number(productData.price)} per box</p>
-                        <p className='border border-[var(--green)] text-xs rounded-sm px-1 py-1'>{item.size}kg box</p>
+                        <p className='text-md font-bold text-[var(--green)]'>{currency}{productData.price}/kg</p>
+                        <p className='border border-[var(--green)] text-xs rounded-sm px-1 py-1'>{item.size}kg</p>
                       </div>
-                      <p className='text-xs rounded-sm px-1 py-2'>Total price for {item.quantity} {(item.quantity === 1) ? "box" : "boxes"} = {currency}{Number(item.size) * Number(productData.price) * Number(item.quantity)}</p>
                     </div>
                   </div>
                   <input onChange={(e) => e.target.value === '' || e.target.value === '0' ? null : updateQuantity(item._id, item.size, Number(e.target.value))} className='border border-gray-300 max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type="number" min={1} defaultValue={item.quantity} />
@@ -78,7 +61,7 @@ const Cart = () => {
         <CartTotal />
       </div>
       <div className='text-center pb-20  border-b border-gray-300'>
-        <button onClick={handleCheckout} className='p-4 text-[1rem] sm:text-[1.25rem] bg-[var(--black)] text-white rounded-md font-bold hover:bg-[var(--yellow)] hover:text-[var(--brown)] transition-[var(--transition)]'>Proceed to Checkout</button>
+        <button onClick={() => navigate('/place-order')} className='p-4 text-[1rem] sm:text-[1.25rem] bg-[var(--black)] text-white rounded-md font-bold hover:bg-[var(--yellow)] hover:text-[var(--brown)] transition-[var(--transition)]'>Proceed to Checkout</button>
       </div>
 
       <div className='bg-[var(--light-yellow)]'>
