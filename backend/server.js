@@ -26,7 +26,11 @@ app.use("/api/order", orderRouter);
 app.get("/", (req, res) => {
     res.send("API Working");
 });
-
+//temporary middleware for request logging:
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.originalUrl}`);
+    next();
+});
 const start = async () => {
     try {
         await connectDB();
